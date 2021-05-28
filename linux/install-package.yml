@@ -1,0 +1,18 @@
+---
+- name: Install Package
+  hosts: all
+  vars:
+  - package_name: httpd
+
+  tasks:
+  - name: Install the latest version of httpd
+    package:
+      name: {{ package_name }}
+      state: latest
+
+  - name: Enable httpd service
+    service:
+      name: {{ package_name }}
+      state: started
+      enabled: yes
+    tags: packages
