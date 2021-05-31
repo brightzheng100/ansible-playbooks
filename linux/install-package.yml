@@ -2,15 +2,15 @@
 - name: Install Package
   hosts: all
   vars:
-  - package_name: httpd
+  - package_name: apache2
 
   tasks:
-  - name: Install the latest version of httpd
+  - name: Install the latest version of apache2
     package:
       name: "{{ package_name }}"
       state: latest
 
-  - name: Enable httpd service
+  - name: Enable apache2 service
     service:
       name: "{{ package_name }}"
       state: started
