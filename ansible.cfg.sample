@@ -1,0 +1,9 @@
+[defaults]
+inventory           = inventory.cfg
+remote_user         = ubuntu
+debug               = False
+host_key_checking   = False
+private_key_file    = <YOUR SSH KEY FILE PATH>
+
+[privilege_escalation]
+become              = True
