@@ -1,0 +1,13 @@
+---
+- name: Uninstall Packages
+  hosts: all
+  gather_facts: False
+  vars:
+  - package_name: apache2
+
+  tasks:
+  - name: Uninstall Apache2
+    package:
+      name: "{{ package_name }}"
+      autoremove: yes
+      state: absent

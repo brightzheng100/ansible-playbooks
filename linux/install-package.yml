@@ -1,18 +1,18 @@
 ---
 - name: Install Package
   hosts: all
+  gather_facts: False
   vars:
   - package_name: apache2
 
   tasks:
-  - name: Install the latest version of apache2
+  - name: Install the latest version of Apache2
     package:
       name: "{{ package_name }}"
       state: latest
 
-  - name: Enable apache2 service
+  - name: Enable Apache2 service
     service:
       name: "{{ package_name }}"
       state: started
       enabled: yes
-    tags: packages
